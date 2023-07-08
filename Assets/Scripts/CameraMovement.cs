@@ -8,6 +8,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _tempoVariacaoVelocidade;
     [SerializeField] private float _quantidadeVariacaoVelocidade;
+    [SerializeField] private GameObject player;
     private Rigidbody2D _rigidBody;
     private float _deltaTime;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         if(_speed < _maxSpeed)
             {
             if (_deltaTime > _tempoVariacaoVelocidade)
