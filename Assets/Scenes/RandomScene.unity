@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {fileID: 1355265649}
   patterns:
-  - {fileID: 8684718417026818338, guid: a6d722925efce5e46909d770ed596678, type: 3}
+  - {fileID: 705326301153117642, guid: ab1b8376c0e497f4ba17ced195fd2c69, type: 3}
   platformDistance: {x: 0, y: 0, z: 0}
   player: {fileID: 1677632738}
   delayToDestroy: 120
@@ -2352,6 +2352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9308238eefd343a499258808d629963b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 816631939}
+  gameControler: {fileID: 257942066}
   _player: {fileID: 1696992427}
   cam: {fileID: 1677632740}
 --- !u!1 &1696992427

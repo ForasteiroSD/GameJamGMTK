@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CameraPlayerDeath : MonoBehaviour
 {
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject gameControler;
     [SerializeField] GameObject _player;
     [SerializeField] Camera cam;
     // Start is called before the first frame update
@@ -18,7 +20,10 @@ public class CameraPlayerDeath : MonoBehaviour
     {
         if(!I_Can_See(_player))
         {
-            SceneManager.LoadScene("GameOver");
+            canvas.SetActive(true);
+            gameControler.SetActive(true);
+            Camera.main.GetComponent<AudioSource>().mute = true;
+            Time.timeScale = 0;
         }
     }
 
