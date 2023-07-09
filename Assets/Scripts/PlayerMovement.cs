@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _range;
     [SerializeField] private LayerMask _layerCollider;
     [SerializeField] private Animator animator;
+    [SerializeField] private bool grande = false;
     private Rigidbody2D _rigidBody;
     public Vector2 movement;
     private float _deltaTime;     // Tempo para variar a velocidade do personagem
@@ -64,11 +65,27 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Pterodatilo" || collision.tag == "Mosossauro") {
-            canvas.SetActive(true);
-            gameControler.SetActive(true);
-            Camera.main.GetComponent<AudioSource>().mute = true;
-            Time.timeScale = 0;
+
+        if (collision.tag == "Carne")
+        {
+            grande = true;
+            animator.SetBool("estaGrande", true);
+            Destroy(collision.gameObject);
+        }
+        if (collision.tag == "Pterodatilo") {
+            if (grande == true)
+            {
+                grande = false;
+                animator.SetBool("estaGrande", false);
+                Destroy(collision.gameObject);
+            }
+            else {
+                canvas.SetActive(true);
+                gameControler.SetActive(true);
+                Camera.main.GetComponent<AudioSource>().mute = true;
+                Time.timeScale = 0;
+            }
+
         }
     }
 
