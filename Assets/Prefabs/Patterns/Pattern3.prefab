@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2379021864068126991}
   - component: {fileID: 2697564128484231975}
   - component: {fileID: 60974298838754599}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1932,7 @@ Transform:
   - {fileID: 65069480618098239}
   - {fileID: 6086750477210748939}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &8196394557745786279
 MeshCollider:
