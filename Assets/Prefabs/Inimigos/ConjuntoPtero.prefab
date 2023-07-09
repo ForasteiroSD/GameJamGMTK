@@ -213,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8deac6e0a985f46a4c050330859550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  gameControler: {fileID: 0}
   avancar: 0.1
   imagem: {fileID: 867760199629209613}
 --- !u!95 &530438637580478149

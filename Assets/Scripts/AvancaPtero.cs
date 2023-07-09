@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class AvancaPtero : MonoBehaviour
 {
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject gameControler;
     [SerializeField] private float avancar;
     [SerializeField] private SpriteRenderer imagem;
     private Boolean liberado;
@@ -29,11 +31,24 @@ public class AvancaPtero : MonoBehaviour
         imagem.enabled = true;
         liberado = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Player")
+        if(collision.collider.tag == "Player")
         {
-            SceneManager.LoadScene("GameOver");
+
+            if (Carne.grande)
+            {
+                Carne.grande = false;
+                Debug.Log("tome");
+                Destroy(gameObject);
+            }
+            else
+            {
+                canvas.SetActive(true);
+                gameControler.SetActive(true);
+                Camera.main.GetComponent<AudioSource>().mute = true;
+                Time.timeScale = 0;
+            }
         }
     }
 }

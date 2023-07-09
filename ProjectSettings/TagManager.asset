@@ -9,6 +9,7 @@ TagManager:
   - StopMovementVertical
   - Death
   - Wall
+  - Carne
   layers:
   - Default
   - TransparentFX
