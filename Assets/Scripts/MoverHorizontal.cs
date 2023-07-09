@@ -72,10 +72,13 @@ public class MoverHorizontal : MonoBehaviour {
     //     if (direction.x > 0f) { //Change the axis to fit your needs
     //             Debug.Log("right");
     //             touchingRight = true;
+    //         }
     //     }
-    //     if (direction.x < 0f) {
-    //             Debug.Log("left");
-    //             touchingLeft = true;
-    //     }
+    // }
+
+    // void OnCollisionExit2D(Collision2D collisionInfo) { //you can change this to OnCollisionStay or OnTriggerStay
+    //     Debug.Log("Sai");
+    //     touchingLeft = false;
+    //     touchingRight = false;
     // }
 }
