@@ -393,10 +393,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {fileID: 1355265649}
   patterns:
-  - {fileID: 5712910345871903617, guid: 3c5f1cd78039fab4296ac4525527b65f, type: 3}
+  - {fileID: 2829314512712698924, guid: e81ace5fb29ea5348a18f2d922a64fdd, type: 3}
   platformDistance: {x: 0, y: 0, z: 0}
   player: {fileID: 1677632738}
-  delayToDestroy: 85
+  delayToDestroy: 120
 --- !u!114 &1677632743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,11 +409,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3a0dafad8dbb54eb13f6400b4a44a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 0
   _maxSpeed: 15
   _tempoVariacaoVelocidade: 10
   _quantidadeVariacaoVelocidade: 2
   player: {fileID: 1696992427}
+  smoothTime: 0.5
 --- !u!50 &1677632744
 Rigidbody2D:
   serializedVersion: 4
@@ -454,9 +455,10 @@ GameObject:
   - component: {fileID: 1696992428}
   - component: {fileID: 1696992432}
   - component: {fileID: 1696992431}
+  - component: {fileID: 1696992433}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f5a5ad3485c664cb22f625345bf427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 0
   _maxSpeed: 15
   _tempoVariacaoVelocidade: 10
   _quantidadeVariacaoVelocidade: 2
@@ -481,6 +483,7 @@ MonoBehaviour:
   _layerCollider:
     serializedVersion: 2
     m_Bits: 0
+  movement: {x: 0, y: 0}
 --- !u!212 &1696992429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -573,7 +576,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1696992432
 BoxCollider2D:
@@ -582,7 +585,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696992427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -620,3 +623,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &1696992433
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696992427}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

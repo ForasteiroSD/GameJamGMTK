@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _range;
     [SerializeField] private LayerMask _layerCollider;
     private Rigidbody2D _rigidBody;
+    public Vector2 movement;
     private float _deltaTime;     // Tempo para variar a velocidade do personagem
     // Start is called before the first frame update
     void Start()
@@ -43,8 +44,9 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        Debug.Log(_speed);
-        _rigidBody.velocity = new Vector2(_speed, _rigidBody.velocity.y);
+        // Debug.Log(_speed);
+        movement = new Vector2(_speed, _rigidBody.velocity.y);
+        _rigidBody.velocity = movement;
 
     }
 

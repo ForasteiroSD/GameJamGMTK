@@ -66,16 +66,11 @@ public class MoverHorizontal : MonoBehaviour {
     }
 
     // void OnCollisionEnter2D(Collision2D collisionInfo) { //you can change this to OnCollisionStay or OnTriggerStay
-    //     Vector3 hit = collisionInfo.contacts[0].normal;
-    //     float angle = Vector3.Angle(hit, Vector3.up);
-    //     if(Mathf.Approximately(angle, 90)){
-    //         Vector3 cross = Vector3.Cross(Vector3.forward, hit);
-    //         if (cross.y > 0) { // left side of the player
-    //             Debug.Log("Left");
-    //             touchingLeft = true;
-    //         }
-    //         else { // right side of the player
-    //             Debug.Log("Right");
+    //     Debug.Log("Entrei");
+    //     var direction = transform.InverseTransformPoint (collisionInfo.transform.position); //this helps us find which direction the object collided from
+ 
+    //     if (direction.x > 0f) { //Change the axis to fit your needs
+    //             Debug.Log("right");
     //             touchingRight = true;
     //         }
     //     }
