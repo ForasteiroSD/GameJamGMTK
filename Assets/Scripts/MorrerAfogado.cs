@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MorrerAfogado : MonoBehaviour
 {
-    // Colocar nas aguas e em lugares que são possíveis cair do mapa, colocar um collider com Trigger ligado.
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        SceneManager.LoadScene("GameOver");
+    // Colocar nas aguas e em lugares que sï¿½o possï¿½veis cair do mapa, colocar um collider com Trigger ligado.
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.gameObject.tag == "Death") {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

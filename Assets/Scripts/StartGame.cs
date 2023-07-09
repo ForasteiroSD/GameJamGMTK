@@ -7,7 +7,7 @@ public class StartGame : MonoBehaviour
 {
     private void OnMouseDown()
     {
-         SceneManager.LoadScene("SceneMovementPlayer");
+         SceneManager.LoadScene("RandomScene");
     }
 
 }

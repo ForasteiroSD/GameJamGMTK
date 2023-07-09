@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - StopMovement
   - StopMovementVertical
+  - Death
   layers:
   - Default
   - TransparentFX
