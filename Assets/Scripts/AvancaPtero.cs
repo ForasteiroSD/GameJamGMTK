@@ -5,6 +5,7 @@ using UnityEngine;
 public class AvancaPtero : MonoBehaviour
 {
     [SerializeField] private float avancar;
+    [SerializeField] private Porrete defende;
     private Vector3 mover;
     private void Start()
     {
@@ -14,5 +15,16 @@ public class AvancaPtero : MonoBehaviour
     {
         mover.x += -avancar;
         transform.position = mover;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (defende.invulneravel)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("TomeiDano");
+        }
     }
 }
