@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] public float _speed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _tempoVariacaoVelocidade;
     [SerializeField] private float _quantidadeVariacaoVelocidade;
@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _layerCollider;
     [SerializeField] private Animator animator;
     private Rigidbody2D _rigidBody;
+    public Vector2 movement;
     private float _deltaTime;     // Tempo para variar a velocidade do personagem
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,13 @@ public class PlayerMovement : MonoBehaviour
         {
             // Para o player 
             animator.SetBool("bateParede", true);
-            _speed = 0;
-            animator.SetBool("bateParede", false);
+            
+            
         }
         else
         {
-            
+            animator.SetBool("bateParede", false);
+
             if (_speed < _maxSpeed)
             {
                 if (_deltaTime > _tempoVariacaoVelocidade)
@@ -46,8 +48,9 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        Debug.Log(_speed);
-        _rigidBody.velocity = new Vector2(_speed, _rigidBody.velocity.y);
+        // Debug.Log(_speed);
+        movement = new Vector2(_speed, _rigidBody.velocity.y);
+        _rigidBody.velocity = movement;
 
     }
 

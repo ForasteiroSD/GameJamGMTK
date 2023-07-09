@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mosossauro : MonoBehaviour
 {
     [SerializeField] private float tamanhoPulo;
-    [SerializeField] private Transform jogador;
-    [SerializeField] private Porrete defende;
+    //[SerializeField] private Transform jogador;
     [SerializeField] private Animator animator;
     private Vector3 lugar;
     private Boolean atacou;
@@ -34,31 +34,17 @@ public class Mosossauro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(((jogador.position.x - lugar.x)> -1)&&(!atacou))
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
         {
             animator.SetBool("recuaAtaque", false);
             animator.SetBool("comecaAtaque", true);
             ataque();
-        }
-        if(((jogador.position.x - lugar.x) > 1) && (atacou))
-        {
-            animator.SetBool("comecaAtaque", false);
-            animator.SetBool("recuaAtaque", true);
-            volta();
+            SceneManager.LoadScene("GameOver");
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            if (defende.invulneravel) 
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                Debug.Log("TomeiDano");
-            }
-        }
-    }
+        
 }

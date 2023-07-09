@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class SpawnPtero : MonoBehaviour
 {
-    [SerializeField] private Transform jogador;
     [SerializeField] private AvancaPtero avancar;
-    [SerializeField] private SpriteRenderer imagem;
-    [SerializeField] private float distancia;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        imagem.enabled = false;
-        avancar.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(transform.position.x - jogador.position.x < distancia)
+        if (collision.tag == "Player")
         {
-            imagem.enabled = true;
-            avancar.enabled = true;
+            avancar.liberar();
         }
     }
 }

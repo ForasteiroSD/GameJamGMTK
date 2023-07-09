@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour {
-    private const float playerDistanceSpawnPlatform = 20f;
+    [SerializeField] private const float playerDistanceSpawnPlatform = 50f;
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform[] patterns;
     [SerializeField] private Vector3 platformDistance;
@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         if(Vector3.Distance(player.transform.position, lastEndPosition) < playerDistanceSpawnPlatform) StartCoroutine(SpawnPlatform());
     }
 
@@ -32,7 +32,6 @@ public class LevelGenerator : MonoBehaviour {
 
     private Transform SpawnLevelPart(Vector3 spawnPosition) {
         Transform pattern = patterns[UnityEngine.Random.Range(0, patterns.Length)];
-        spawnPosition += new Vector3(pattern.GetComponent<MeshCollider>().bounds.extents.x, 0, 0);
         Transform newPlatform = Instantiate(pattern, spawnPosition, Quaternion.identity);
         return newPlatform;
     }
