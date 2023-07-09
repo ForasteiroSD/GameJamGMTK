@@ -393,7 +393,8 @@ GameObject:
   - component: {fileID: 8861419624097348016}
   - component: {fileID: 251724862941776601}
   - component: {fileID: 2072090414270557887}
-  m_Layer: 0
+  - component: {fileID: 7114712504921794905}
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,6 +513,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &7114712504921794905
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4063854267870277609}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &6268490864989182946
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +635,8 @@ GameObject:
   - component: {fileID: 8092569205403945298}
   - component: {fileID: 8977996152606593556}
   - component: {fileID: 1594158507497447922}
-  m_Layer: 0
+  - component: {fileID: 1869746058261460907}
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,6 +755,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1869746058261460907
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518208656052857436}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &6786327748062685761
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,11 +966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5065169273696913198, guid: 56eb432d36e13854ebe07c9ea7e5b016, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.209354
+      value: 11.3
       objectReference: {fileID: 0}
     - target: {fileID: 5065169273696913198, guid: 56eb432d36e13854ebe07c9ea7e5b016, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18274593
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5065169273696913198, guid: 56eb432d36e13854ebe07c9ea7e5b016, type: 3}
       propertyPath: m_LocalPosition.z
