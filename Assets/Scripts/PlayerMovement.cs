@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _quantidadeVariacaoVelocidade;
     [SerializeField] private float _range;
     [SerializeField] private LayerMask _layerCollider;
+    [SerializeField] private Animator animator;
     private Rigidbody2D _rigidBody;
     private float _deltaTime;     // Tempo para variar a velocidade do personagem
     // Start is called before the first frame update
@@ -29,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider)
         {
             // Para o player 
+            animator.SetBool("bateParede", true);
             _speed = 0;
+            animator.SetBool("bateParede", false);
         }
         else
         {
