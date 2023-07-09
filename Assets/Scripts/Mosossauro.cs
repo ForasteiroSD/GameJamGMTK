@@ -9,6 +9,7 @@ public class Mosossauro : MonoBehaviour
     [SerializeField] private float tamanhoPulo;
     [SerializeField] private Transform jogador;
     [SerializeField] private Porrete defende;
+    [SerializeField] private Animator animator;
     private Vector3 lugar;
     private Boolean atacou;
 
@@ -35,10 +36,14 @@ public class Mosossauro : MonoBehaviour
     {
         if(((jogador.position.x - lugar.x)> -1)&&(!atacou))
         {
+            animator.SetBool("recuaAtaque", false);
+            animator.SetBool("comecaAtaque", true);
             ataque();
         }
         if(((jogador.position.x - lugar.x) > 1) && (atacou))
         {
+            animator.SetBool("comecaAtaque", false);
+            animator.SetBool("recuaAtaque", true);
             volta();
         }
     }
