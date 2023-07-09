@@ -1326,6 +1326,7 @@ GameObject:
   - component: {fileID: 257942067}
   - component: {fileID: 257942070}
   - component: {fileID: 257942068}
+  - component: {fileID: 257942071}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1407,6 +1408,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: {fileID: 758618981}
   player: {fileID: 143165727}
+--- !u!114 &257942071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257942066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0f458f1b2c12a4d82ccf7ce8429401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513973766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,7 +2410,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.174
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
