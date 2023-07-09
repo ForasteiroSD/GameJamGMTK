@@ -6,22 +6,23 @@ public class DistanciaPercorrida : MonoBehaviour
 {
     void awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
-    private Transform posicaoInicial;
-    [SerializeField] private Transform posicaoPlayer;
-    public float distancia = 0;
+    private float posicaoInicial;
+    [SerializeField] private GameObject player;
+    public float distancia = 4;
     void Start()
     {
-        posicaoInicial = posicaoPlayer;
+        posicaoInicial = player.transform.position.x;
     }
     void Update()
     {
-        distancia = posicaoPlayer.position.x - posicaoInicial.position.x;
+        // Debug.Log(distancia);
+        distancia = player.transform.position.x - posicaoInicial;
     }
 
-    public float getScore()
+    public int getScore()
     {
-        return distancia;
+        return (int) distancia;
     }
 }

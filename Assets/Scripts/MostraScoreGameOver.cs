@@ -6,14 +6,13 @@ using TMPro;
 public class MostraScoreGameOver : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _score;
+    [SerializeField] private GameObject player;
     //[SerializeField] private GameObject _scoreHandler;
-    private float _actualScore;
+    private int _actualScore;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        _actualScore = GetComponent<DistanciaPercorrida>().getScore();
+        _actualScore = player.GetComponent<DistanciaPercorrida>().getScore();
         _score.text = _actualScore.ToString();
     }
-
-    
 }

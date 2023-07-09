@@ -14,6 +14,10 @@ public class CameraMovement : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private float _deltaTime;
     // Start is called before the first frame update
+    void Awake() {
+        Camera.main.GetComponent<AudioSource>().mute = false;
+        Time.timeScale = 1;
+    }
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();

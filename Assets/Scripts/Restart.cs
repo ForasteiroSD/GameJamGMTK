@@ -7,6 +7,13 @@ public class Restart : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("SceneMovementPlayer");
+        Debug.Log("Teste");
+        SceneManager.LoadScene("RandomScene");
+    }
+
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene("RandomScene");
+        }
     }
 }
