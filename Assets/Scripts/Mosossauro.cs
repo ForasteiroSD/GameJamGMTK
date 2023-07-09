@@ -43,7 +43,7 @@ public class Mosossauro : MonoBehaviour
             animator.SetBool("recuaAtaque", false);
             animator.SetBool("comecaAtaque", true);
             ataque();
-            SceneManager.LoadScene("GameOver");
+            // SceneManager.LoadScene("GameOver");
         }
     }
         

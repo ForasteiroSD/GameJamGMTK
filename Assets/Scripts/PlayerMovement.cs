@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Pterodatilo") {
+        if (collision.tag == "Pterodatilo" || collision.tag == "Mosossauro") {
             canvas.SetActive(true);
             gameControler.SetActive(true);
             Camera.main.GetComponent<AudioSource>().mute = true;
