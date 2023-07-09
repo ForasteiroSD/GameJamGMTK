@@ -32,12 +32,13 @@ public class PlayerMovement : MonoBehaviour
         {
             // Para o player 
             animator.SetBool("bateParede", true);
-            _speed = 0;
-            animator.SetBool("bateParede", false);
+            
+            
         }
         else
         {
-            
+            animator.SetBool("bateParede", false);
+
             if (_speed < _maxSpeed)
             {
                 if (_deltaTime > _tempoVariacaoVelocidade)
