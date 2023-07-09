@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistanciaPercorrida : MonoBehaviour {
-    private Vector3 posicaoInicial;
-    private Vector3 posicaoPlayer;
+public class DistanciaPercorrida : MonoBehaviour
+{
+    void awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    private Transform posicaoInicial;
+    [SerializeField] private Transform posicaoPlayer;
     public float distancia = 0;
-
-    void Start() {
-        posicaoInicial = transform.position;
+    void Start()
+    {
+        posicaoInicial = posicaoPlayer;
+    }
+    void Update()
+    {
+        distancia = posicaoPlayer.position.x - posicaoInicial.position.x;
     }
 
-    // Update is called once per frame
-    void Update() {
-        posicaoPlayer = transform.position;
-        distancia = posicaoPlayer.x - posicaoInicial.x; 
+    public float getScore()
+    {
+        return distancia;
     }
 }
