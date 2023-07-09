@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AvancaPtero : MonoBehaviour
-{
+public class AvancaPtero : MonoBehaviour {
     [SerializeField] private float avancar;
     [SerializeField] private SpriteRenderer imagem;
     private Boolean liberado;
@@ -28,12 +27,5 @@ public class AvancaPtero : MonoBehaviour
     {
         imagem.enabled = true;
         liberado = true;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            SceneManager.LoadScene("GameOver");
-        }
     }
 }

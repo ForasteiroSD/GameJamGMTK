@@ -9,6 +9,9 @@ TagManager:
   - StopMovementVertical
   - Death
   - Wall
+  - Turn
+  - Velociraptor
+  - Pterodatilo
   layers:
   - Default
   - TransparentFX

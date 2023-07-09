@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject gameControler;
     [SerializeField] public float _speed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _tempoVariacaoVelocidade;
@@ -59,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
 
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * _range);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "Pterodatilo") {
+            canvas.SetActive(true);
+            gameControler.SetActive(true);
+            Camera.main.GetComponent<AudioSource>().mute = true;
+            Time.timeScale = 0;
+        }
     }
 
 }
