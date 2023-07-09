@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] public float _speed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _tempoVariacaoVelocidade;
     [SerializeField] private float _quantidadeVariacaoVelocidade;

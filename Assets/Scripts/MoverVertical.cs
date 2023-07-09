@@ -20,6 +20,7 @@ public class MoverVertical : MonoBehaviour {
     
     private void OnMouseDrag() {
         mover.y = GetMouseWorldPosition().y + mousePositionOffset.y;
-        transform.position = mover;
+        // transform.position = mover;
+        transform.position = new Vector3(transform.position.x, mover.y, transform.position.z);
     }
 }
