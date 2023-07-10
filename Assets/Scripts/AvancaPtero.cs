@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class AvancaPtero : MonoBehaviour {
     [SerializeField] private float avancar;
     [SerializeField] private SpriteRenderer imagem;
+    [SerializeField] private BoxCollider2D boxCol;
     private Boolean liberado;
     private Vector3 mover;
     private void Start()
@@ -14,6 +15,7 @@ public class AvancaPtero : MonoBehaviour {
         liberado = false;
         mover = transform.position;
         imagem.enabled = false;
+        boxCol.enabled = false;
     }
     private void FixedUpdate()
     {
@@ -26,6 +28,7 @@ public class AvancaPtero : MonoBehaviour {
     public void liberar()
     {
         imagem.enabled = true;
+        boxCol.enabled = true;
         liberado = true;
     }
 }

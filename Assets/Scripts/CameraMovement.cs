@@ -12,6 +12,7 @@ public class CameraMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.25f;
     private Rigidbody2D _rigidBody;
+    private Vector2 movement;
     private float _deltaTime;
     // Start is called before the first frame update
     void Awake() {
@@ -24,7 +25,7 @@ public class CameraMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 TargetPosition = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         transform.position = Vector3.SmoothDamp(transform.position, TargetPosition, ref velocity, smoothTime);
@@ -36,6 +37,8 @@ public class CameraMovement : MonoBehaviour
                 _deltaTime = 0;
             }
         }
-        _rigidBody.velocity = new Vector2(_speed, _rigidBody.velocity.y);
+
+        movement = player.GetComponent<PlayerMovement>().movement;
+        _rigidBody.velocity = movement;
     }
 }
